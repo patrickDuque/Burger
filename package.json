@@ -1,7 +1,8 @@
 {
   "name": "sample-react",
   "version": "0.1.0",
-  "private": true,
+	"private": true,
+	"homepage": "https://patrickDuque.github.io/BurgerBuilder",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -22,6 +23,8 @@
     "uikit": "^3.5.5"
   },
   "scripts": {
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
