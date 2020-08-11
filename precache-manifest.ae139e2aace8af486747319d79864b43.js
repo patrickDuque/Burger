@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "78fb80cac80af316003b661a21cd82f7",
+    "revision": "4f8d869233a8704f1a236d98efa0d9c7",
     "url": "/Burger/index.html"
   },
   {
-    "revision": "12b7c0aafad4876db5cb",
+    "revision": "bfe5eabc4403365e1c32",
     "url": "/Burger/static/css/main.7afd9fae.chunk.css"
   },
   {
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Burger/static/js/4.4e2e8da4.chunk.js"
   },
   {
-    "revision": "12b7c0aafad4876db5cb",
-    "url": "/Burger/static/js/main.8c9eb75a.chunk.js"
+    "revision": "bfe5eabc4403365e1c32",
+    "url": "/Burger/static/js/main.914abfee.chunk.js"
   },
   {
     "revision": "613d631fcd1dbc654f81",
