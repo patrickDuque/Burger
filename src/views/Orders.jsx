@@ -10,14 +10,12 @@ import Order from '../components/Order/Order';
 import withErrorHandler from '../hoc/withErrorHandler';
 
 export default withErrorHandler(() => {
-  const dispatch = useDispatch();
-  // Selectors
+	const dispatch = useDispatch();
+	
   const orders = useSelector(state => state.orders.orders);
 
-  // Dispatch
   const onGetOrders = useCallback(token => dispatch(ordersAction.getOrders(token)), [ dispatch ]);
 
-  // Effects
   useEffect(
     () => {
       onGetOrders(localStorage.getItem('token'));

@@ -16,20 +16,18 @@ import Spinner from '../components/UI/Spinner';
 import withErrorHandler from '../hoc/withErrorHandler';
 
 export default withErrorHandler(props => {
-  const dispatch = useDispatch();
-  // State
+	const dispatch = useDispatch();
+	
   const [ order, setOrder ] = useState(false);
   const ingredients = useSelector(state => state.ingredients.ingredients);
   const price = useSelector(state => state.ingredients.price);
   const loading = useSelector(state => state.ingredients.loading);
 
-  // Dispatch
   const onAddIngredient = type => dispatch(ingredientsActions.addIngredient(type));
   const onRemoveIngredient = type => dispatch(ingredientsActions.subIngredient(type));
   const onGetIngredients = useCallback(() => dispatch(ingredientsActions.getIngredients()), [ dispatch ]);
   const onOrder = () => dispatch(ingredientsActions.goToOrder());
 
-  // Effect
   useEffect(
     () => {
       onGetIngredients();
@@ -37,7 +35,6 @@ export default withErrorHandler(props => {
     [ onGetIngredients ]
   );
 
-  // Handlers
   const updatePurchaseState = () => {
     const sum = Object.values(ingredients).reduce((a, b) => a + b, 0);
     return sum > 0;
@@ -56,7 +53,6 @@ export default withErrorHandler(props => {
     setOrder(false);
   }, []);
 
-  // Variables
   const disabledInfoSub = { ...ingredients };
   for (let key in disabledInfoSub) {
     disabledInfoSub[key] = disabledInfoSub[key] <= 0;

@@ -21,14 +21,11 @@ const SignUp = React.lazy(() => import('./views/SignUp'));
 function App(props) {
   const dispatch = useDispatch();
 
-  // Selector
   const ingredients = useSelector(state => state.ingredients.ingredients === null);
   const user = useSelector(state => state.auth.user);
 
-  // Dispatch
   const onAutoLogin = useCallback(() => dispatch(actions.authCheck()), [ dispatch ]);
 
-  // Effects
   useEffect(
     () => {
       onAutoLogin();
@@ -36,7 +33,6 @@ function App(props) {
     [ onAutoLogin ]
   );
 
-  // Routes without auth
   let routes = (
     <Switch>
       <Route path='/signin' component={SignIn} />
@@ -54,7 +50,6 @@ function App(props) {
     </Switch>
   );
 
-  // Routes with auth
   if (user) {
     routes = (
       <Switch>

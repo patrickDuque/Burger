@@ -16,17 +16,14 @@ import Spinner from '../components/UI/Spinner';
 export default withErrorHandler(props => {
   const dispatch = useDispatch();
 
-  // State
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
   const [ error ] = useState({ message: 'Required' });
   const loading = useSelector(state => state.auth.loading);
   const userError = useSelector(state => state.auth.error);
 
-  // Dispatch
   const onSignUp = user => dispatch(authActions.signUp(user));
 
-  // Handlers
   const onSubmitLogIn = e => {
     e.preventDefault();
     onSignUp({ email, password });

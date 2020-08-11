@@ -16,7 +16,6 @@ import withErrorHandler from '../hoc/withErrorHandler';
 export default withErrorHandler(props => {
   const dispatch = useDispatch();
 
-  // State
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
   const [ error ] = useState({ message: 'Required' });
@@ -25,10 +24,8 @@ export default withErrorHandler(props => {
   const userError = useSelector(state => state.auth.error);
   const ingredients = useSelector(state => state.ingredients.ingredients);
 
-  // Dispatch
   const onLogIn = user => dispatch(authActions.signIn(user));
 
-  // Handlers
   const onSubmitLogIn = e => {
     e.preventDefault();
     onLogIn({ email, password });

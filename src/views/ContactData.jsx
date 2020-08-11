@@ -13,24 +13,20 @@ import CustomInput from '../components/UI/CustomInput';
 
 export default props => {
   const dispatch = useDispatch();
-  // State
   const [ name, setName ] = useState('');
   const [ street, setStreet ] = useState('');
   const [ town, setTown ] = useState('');
   const [ city, setCity ] = useState('');
   const [ phoneNumber, setPhoneNumber ] = useState('');
 
-  // Selectors
   const ingredients = useSelector(state => state.ingredients.ingredients);
   const price = useSelector(state => state.ingredients.price);
   const loading = useSelector(state => state.ingredients.loading);
   const ordered = useSelector(state => state.ingredients.ordered);
   const user = useSelector(state => state.auth.user);
 
-  // Dispatch
   const onSendOrder = (data, token) => dispatch(ingredientsActions.postOrder(data, token));
 
-  // Handlers
   const submitOrderHandler = e => {
     e.preventDefault();
     const time = new Date();
@@ -56,7 +52,6 @@ export default props => {
     }
   };
 
-  // Variables
   let redirect = ordered ? <Redirect to='/' /> : null;
   let data = <Spinner />;
   if (!loading) {
