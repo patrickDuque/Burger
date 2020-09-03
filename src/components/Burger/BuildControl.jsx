@@ -1,5 +1,7 @@
 import React from 'react';
 
+//Comment
+
 export default props => (
   <div id='BuildControl'>
     <div className='Label'>{props.label}</div>
